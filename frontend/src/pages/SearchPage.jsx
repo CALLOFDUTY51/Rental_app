@@ -16,7 +16,7 @@ function SearchPage() {
     const dis=useDispatch()
     const abc=()=>{
       const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
-      const url = `${apiUrl}/properties/search/${search}`;  // Combine with the search parameter
+      const url = `https://rental-app-vc3y.onrender.com/properties/search/${search}`;  // Combine with the search parameter
       
 
         axios.get(url).then((res)=>{

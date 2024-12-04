@@ -16,7 +16,7 @@ function ReservationList() {
 
     const getReservationList=()=>{
         const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
-const url = `${apiUrl}/users/${userId}/reservation`;  // Combine with the user ID and endpoint
+const url = `https://rental-app-vc3y.onrender.com/users/${userId}/reservation`;  // Combine with the user ID and endpoint
 
         axios.get(url).then((res)=>{
             const data=res.data

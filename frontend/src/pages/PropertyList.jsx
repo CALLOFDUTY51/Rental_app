@@ -16,7 +16,7 @@ function PropertyList() {
 
     const getPropertyList=()=>{
       const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
-const url = `${apiUrl}/users/${user._id}/properties`;  // Combine with the dynamic user ID
+const url = `https://rental-app-vc3y.onrender.com/users/${user._id}/properties`;  // Combine with the dynamic user ID
 
         axios.get(url)
         .then((res)=>{

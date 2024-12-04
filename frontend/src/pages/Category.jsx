@@ -16,7 +16,7 @@ function Category() {
     
   const getFeedListings = () => {
     const apiUrl = import.meta.env.VITE_API_URL;  // Use Vite's environment variable syntax
-    const url = `${apiUrl}/properties?category=${category}`;
+    const url = `https://rental-app-vc3y.onrender.com/properties?category=${category}`;
     
     
     

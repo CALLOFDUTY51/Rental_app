@@ -16,7 +16,7 @@ function TripList() {
 
     const getTripList=()=>{
         const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
-const url = `${apiUrl}/users/${userId}/trips`;  // Combine with the userId and endpoint
+const url = `https://rental-app-vc3y.onrender.com/users/${userId}/trips`;  // Combine with the userId and endpoint
 
         axios.get(url).then((res)=>{
             const data=res.data

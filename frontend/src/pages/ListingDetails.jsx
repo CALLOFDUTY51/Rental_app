@@ -65,7 +65,7 @@ function ListingDetails() {
       totalPrice:listing.price*dayCount 
     }
     const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
-const url = `${apiUrl}/bookings/create`;      // Combine with the endpoint
+const url = `https://rental-app-vc3y.onrender.com/bookings/create`;      // Combine with the endpoint
 
     axios.post(url,bookingForm)
     .then((res)=>{

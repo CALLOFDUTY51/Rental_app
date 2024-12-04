@@ -59,11 +59,11 @@ function RegistrationPage() {
     const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 
 
-    axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,imageData)
+    axios.post(`https://api.cloudinary.com/v1_1/db7yqdhcl/image/upload`,imageData)
     .then((res)=>{
         const updatedFormData = { ...formData, profileImagePath: res.data.url }
         const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
-const url = `${apiUrl}/auth/register`;  // Combine with the endpoint
+const url = `https://rental-app-vc3y.onrender.com/auth/register`;  // Combine with the endpoint
 
         axios.post(url,updatedFormData).then((res)=>{
             console.log(res);

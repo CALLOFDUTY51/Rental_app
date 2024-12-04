@@ -16,9 +16,9 @@ function Listings() {
   const getFeedListings = () => {
     let url;        const apiUrl = import.meta.env.VITE_API_URL;
     if (selectedCategory === "All") {
-      url = `${apiUrl}/properties`;
+      url = `https://rental-app-vc3y.onrender.com/properties`;
     } else {
-      url =  `${apiUrl}/properties?category=${selectedCategory}`;
+      url =  `https://rental-app-vc3y.onrender.com/properties?category=${selectedCategory}`;
     }
     axios
       .get(url)

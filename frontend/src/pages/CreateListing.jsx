@@ -105,7 +105,7 @@ function CreateListing() {
         const formData = new FormData();
         formData.append("file", photo);
         formData.append("upload_preset", "Rental_preset");
-        return axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, formData);
+        return axios.post(`https://api.cloudinary.com/v1_1/db7yqdhcl/image/upload`, formData);
       });
   
       const cloudinaryResponses = await Promise.all(photoUploadPromises);
@@ -142,7 +142,7 @@ function CreateListing() {
       // Submit listing data
       
       const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
-const url = `${apiUrl}/properties/create`;     // Combine with the endpoint
+const url = `https://rental-app-vc3y.onrender.com/properties/create`;     // Combine with the endpoint
 
       const response = await axios.post(url, listingFormData);
       console.log(response.data);
