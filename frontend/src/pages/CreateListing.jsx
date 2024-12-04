@@ -140,7 +140,10 @@ function CreateListing() {
       };
   
       // Submit listing data
-      const url = "http://localhost:9000/properties/create";
+      
+      const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+const url = `${apiUrl}/properties/create`;     // Combine with the endpoint
+
       const response = await axios.post(url, listingFormData);
       console.log(response.data);
   

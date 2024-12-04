@@ -62,7 +62,9 @@ function RegistrationPage() {
     axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,imageData)
     .then((res)=>{
         const updatedFormData = { ...formData, profileImagePath: res.data.url }
-        let url="http://localhost:9000/auth/register";
+        const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+const url = `${apiUrl}/auth/register`;  // Combine with the endpoint
+
         axios.post(url,updatedFormData).then((res)=>{
             console.log(res);
             navigate("/login")

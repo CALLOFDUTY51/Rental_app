@@ -15,8 +15,10 @@ function Category() {
     const dis=useDispatch()
     
   const getFeedListings = () => {
+    const apiUrl = import.meta.env.VITE_API_URL;  // Use Vite's environment variable syntax
+    const url = `${apiUrl}/properties?category=${category}`;
     
-    let  url = `http://localhost:9000/properties?category=${category}`;
+    
     
     axios
       .get(url)

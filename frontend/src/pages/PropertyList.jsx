@@ -15,7 +15,10 @@ function PropertyList() {
     const dis=useDispatch()
 
     const getPropertyList=()=>{
-        axios.get(`http://localhost:9000/users/${user._id}/properties`)
+      const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+const url = `${apiUrl}/users/${user._id}/properties`;  // Combine with the dynamic user ID
+
+        axios.get(url)
         .then((res)=>{
            dis(setPropertyList(res.data))
            setLoading(false)

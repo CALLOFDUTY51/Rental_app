@@ -15,7 +15,9 @@ function SearchPage() {
     const listings=useSelector((state)=>state.listings)
     const dis=useDispatch()
     const abc=()=>{
-        let url =`http://localhost:9000/properties/search/${search}`
+      const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+      const url = `${apiUrl}/properties/search/${search}`;  // Combine with the search parameter
+      
 
         axios.get(url).then((res)=>{
             dis(setListings({listings:res.data}))

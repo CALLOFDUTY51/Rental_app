@@ -15,7 +15,10 @@ function TripList() {
     const dis=useDispatch()
 
     const getTripList=()=>{
-        axios.get(`http://localhost:9000/users/${userId}/trips`).then((res)=>{
+        const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+const url = `${apiUrl}/users/${userId}/trips`;  // Combine with the userId and endpoint
+
+        axios.get(url).then((res)=>{
             const data=res.data
             dis(setTripList(data))
             setLoading(false)

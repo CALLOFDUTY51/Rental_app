@@ -15,7 +15,10 @@ function ReservationList() {
     const dis=useDispatch()
 
     const getReservationList=()=>{
-        axios.get(`http://localhost:9000/users/${userId}/reservation`).then((res)=>{
+        const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+const url = `${apiUrl}/users/${userId}/reservation`;  // Combine with the user ID and endpoint
+
+        axios.get(url).then((res)=>{
             const data=res.data
             console.log(res.data)
             dis(setReservationList(data))

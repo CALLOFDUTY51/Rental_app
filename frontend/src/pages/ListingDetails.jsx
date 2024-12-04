@@ -64,7 +64,10 @@ function ListingDetails() {
       endDate:dateRange[0].endDate.toDateString(),
       totalPrice:listing.price*dayCount 
     }
-    axios.post("http://localhost:9000/bookings/create",bookingForm)
+    const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+const url = `${apiUrl}/bookings/create`;      // Combine with the endpoint
+
+    axios.post(url,bookingForm)
     .then((res)=>{
       navigate(`/${customerId}/trips`)
     })

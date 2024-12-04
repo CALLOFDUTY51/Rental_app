@@ -14,11 +14,11 @@ function Listings() {
   
 
   const getFeedListings = () => {
-    let url;
+    let url;        const apiUrl = import.meta.env.VITE_API_URL;
     if (selectedCategory === "All") {
-      url = "http://localhost:9000/properties";
+      url = `${apiUrl}/properties`;
     } else {
-      url = `http://localhost:9000/properties?category=${selectedCategory}`;
+      url =  `${apiUrl}/properties?category=${selectedCategory}`;
     }
     axios
       .get(url)

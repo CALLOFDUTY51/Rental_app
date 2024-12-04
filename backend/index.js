@@ -9,7 +9,23 @@ const listingRoute=require("./Route/Listing")
 const bookingRoutes=require("./Route/Booking")
 const userRoutes=require("./Route/user")
 
-app.use(cors());
+
+const allowedOrigins = [
+    "http://localhost:5173",  // Local development URL
+    "https://your-frontend-url.vercel.app"  // Production frontend URL (replace with your actual URL)
+  ];
+  app.use(cors({
+    origin: function(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);  // Allow the request
+      } else {
+        callback(new Error("Not allowed by CORS"));  // Block the request
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE","Patch"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))

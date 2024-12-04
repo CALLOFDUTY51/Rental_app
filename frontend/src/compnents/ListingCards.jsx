@@ -45,7 +45,10 @@ function ListingCards({
 
   const patchWishList=(e)=>{
     e.stopPropagation()
-    axios.patch(`http://localhost:9000/users/${user?._id}/${listingId}`)
+    const apiUrl = import.meta.env.VITE_API_URL;  // Access the environment variable
+const url = `${apiUrl}/users/${user?._id}/${listingId}`;  // Combine with user ID and listing ID
+
+    axios.patch(url)
     .then((res)=>{
        dis(setwishList(res.data.wishList))
        console.log(res.data)

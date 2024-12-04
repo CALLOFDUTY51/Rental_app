@@ -13,7 +13,9 @@ function LoginPage() {
   const dis=useDispatch()
   const handleSumbit=async(e)=>{
     e.preventDefault()
-    let url="http://localhost:9000/auth/login"
+    const apiUrl = import.meta.env.VITE_API_URL;  // Use Vite's environment variable syntax
+    const url = `${apiUrl}/auth/login`;
+    
       axios.post(url,{email,password}).then((res)=>{
         console.log(res.data)
        const loggedIn=res.data;
