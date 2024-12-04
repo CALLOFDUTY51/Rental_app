@@ -14,7 +14,7 @@ const userRoutes = require("./Route/user");
 // Allowed Origins for both local and production environments
 const allowedOrigins = [
   "http://localhost:5173",  // Local development URL
-  "https://rental-app-frontend-xyz.vercel.app"  // Replace with your actual production frontend URL
+  "https://rental-app-one-brown.vercel.app/"  // Replace with your actual production frontend URL
 ];
 
 // Enable CORS with dynamic origin handling
