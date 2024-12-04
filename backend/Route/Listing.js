@@ -16,7 +16,7 @@ const storage=multer.diskStorage({
 const upload=multer({storage})
 
 
-router.post("/create",upload.array("listingPhotos"),ListingContoller.createPlace)
+router.post("/create",ListingContoller.createPlace)
 router.get("/",ListingContoller.getListingbycategory)
 router.get("/:listingId",ListingContoller.getListingDetails)
 router.get("/search/:search",ListingContoller.getListingBySearch)

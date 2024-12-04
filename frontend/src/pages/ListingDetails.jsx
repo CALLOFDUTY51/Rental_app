@@ -124,7 +124,7 @@ const url = `https://rental-app-vc3y.onrender.com/bookings/create`;      // Comb
         <div>
           <h2>What this place offers?</h2>
           <div className="amenities">
-            {listing.amenities[0].split(",").map((item, index) => {
+            {listing.amenities.map((item, index) => {
               return (
               <div className="facility" key={index}>
                 <div className="facility_icon">
