@@ -2,6 +2,13 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
+
+res.setHeader("Access-Control-Allow-Origin", "*");
+res.setHeader("Access-Control-Allow-Credentials", "true");
+res.setHeader("Access-Control-Max-Age", "1800");
+res.setHeader("Access-Control-Allow-Headers", "content-type");
+res.setHeader("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, PATCH, OPTIONS");
+// res.setHeader("Content-Type", "application/json;charset=utf-8"); // Opening this comment will cause problems
 const cors = require("cors");
 
 const authRoute = require("./Route/auth");
