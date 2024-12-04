@@ -14,7 +14,7 @@ function Listings() {
   
 
   const getFeedListings = () => {
-    let url;        const apiUrl = import.meta.env.VITE_API_URL;
+    let url;        
     if (selectedCategory === "All") {
       url = `https://rental-app-vc3y.onrender.com/properties`;
     } else {

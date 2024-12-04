@@ -22,7 +22,7 @@ function ListingDetails() {
   const [listing, setListing] = useState(null);
 
   const getFeedListingDetails = async () => {
-    let url = `http://localhost:9000/properties/${listingId}`;
+    let url = `https://rental-app-vc3y.onrender.com/${listingId}`;
     axios
       .get(url)
       .then((res) => {
