@@ -14,7 +14,7 @@ function LoginPage() {
   const handleSumbit=async(e)=>{
     e.preventDefault()
     const apiUrl = import.meta.env.VITE_API_URL;  // Use Vite's environment variable syntax
-    const url = `https://rental-app-vc3y.onrender.com/auth/login`;
+    const url = `${apiUrl}/auth/login`;
     
       axios.post(url,{email,password}).then((res)=>{
         console.log(res.data)
