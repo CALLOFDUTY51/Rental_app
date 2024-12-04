@@ -22,7 +22,7 @@ const allowedOrigins = [
         callback(new Error("Not allowed by CORS"));  // Block the request
       }
     },
-    methods: ["GET", "POST", "PUT", "DELETE","Patch"],
+    methods: ["GET", "POST", "PUT", "DELETE","Patch", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
   }));
 
