@@ -18,19 +18,7 @@ const allowedOrigins = [
 ];
 
 // Enable CORS with dynamic origin handling
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);  // Allow the request
-    } else {
-      callback(new Error("Not allowed by CORS"));  // Block the request
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],  // Allow all methods that might be used
-  allowedHeaders: ["Content-Type", "Authorization"],
-  preflightContinue: false,  // Handle preflight (OPTIONS) requests automatically
-  optionsSuccessStatus: 200, // Some legacy browsers choke on 204
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
