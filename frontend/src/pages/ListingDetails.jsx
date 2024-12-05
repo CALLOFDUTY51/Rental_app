@@ -78,7 +78,7 @@ const url = `https://rental-app-vc3y.onrender.com/bookings/create`;      // Comb
 
     axios.post(url,bookingForm)
     .then((res)=>{
-      
+      navigate(`/${customerId}/trips`)
     })
     .catch((err)=>{
       console.log(err.message)
