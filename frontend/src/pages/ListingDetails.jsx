@@ -53,9 +53,18 @@ function ListingDetails() {
 
   const dayCount = Math.round(end - start) / (1000* 60 * 60 * 24);
 
+  const user=useSelector((state)=>state.user)
+
   const customerId=useSelector((state)=>state?.user?._id)
 
   const handleSubmit=async()=>{
+    console.log(user)
+    if(user===null){
+      navigate("/login")
+      return;
+    }
+    else{
+    
     const bookingForm={
       customerId,
       listingId,
@@ -69,12 +78,13 @@ const url = `https://rental-app-vc3y.onrender.com/bookings/create`;      // Comb
 
     axios.post(url,bookingForm)
     .then((res)=>{
-      navigate(`/${customerId}/trips`)
+      
     })
     .catch((err)=>{
       console.log(err.message)
     })
   }
+}
 
   return loading ? (
     <Loader />
